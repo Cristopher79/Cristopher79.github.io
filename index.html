@@ -2,3 +2,17 @@
 <h2>letsgosky</h2>
 <h3>ciaoraga</h3>
 <b>el master</b>
+from PIL import Image
+
+def ridimensiona_immagine(img_path, larghezza_nuova):
+    """
+    Ridimensiona un'immagine mantenendo le proporzioni.
+    """
+    img = Image.open(img_path)
+    larghezza, altezza = img.size
+    altezza_nuova = int(altezza * larghezza_nuova / larghezza)
+    img = img.resize((larghezza_nuova, altezza_nuova))
+    img.show()
+
+# Esegui ridimensionamento
+ridimensiona_immagine('percorso/dell/immagine.jpg', 800)
