@@ -2,16 +2,7 @@
 <h2>letsgosky</h2>
 <h3>ciaoraga</h3>
 <b>el master</b>
-from PIL import Image
-def calcola_aspect_ratio(larghezza, altezza):
-    """
-    Calcola e restituisce il rapporto di proporzione (aspect ratio).
-    """
-    from math import gcd
-    div = gcd(larghezza, altezza)
-    return larghezza // div, altezza // div
-
-# Esempio di uso
-larghezza, altezza = 1920, 1080
-aspect_ratio = calcola_aspect_ratio(larghezza, altezza)
-print(f"L'aspect ratio è: {aspect_ratio[0]}:{aspect_ratio[1]}")
+totale = 200
+parte = 50
+percentuale = calcola_percentuale(parte, totale)
+print(f"La percentuale di {parte} su {totale} è: {percentuale}%")
