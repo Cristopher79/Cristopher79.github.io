@@ -3,16 +3,15 @@
 <h3>ciaoraga</h3>
 <b>el master</b>
 from PIL import Image
-
-def ridimensiona_immagine(img_path, larghezza_nuova):
+def calcola_aspect_ratio(larghezza, altezza):
     """
-    Ridimensiona un'immagine mantenendo le proporzioni.
+    Calcola e restituisce il rapporto di proporzione (aspect ratio).
     """
-    img = Image.open(img_path)
-    larghezza, altezza = img.size
-    altezza_nuova = int(altezza * larghezza_nuova / larghezza)
-    img = img.resize((larghezza_nuova, altezza_nuova))
-    img.show()
+    from math import gcd
+    div = gcd(larghezza, altezza)
+    return larghezza // div, altezza // div
 
-# Esegui ridimensionamento
-ridimensiona_immagine('percorso/dell/immagine.jpg', 800)
+# Esempio di uso
+larghezza, altezza = 1920, 1080
+aspect_ratio = calcola_aspect_ratio(larghezza, altezza)
+print(f"L'aspect ratio è: {aspect_ratio[0]}:{aspect_ratio[1]}")
