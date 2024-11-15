@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inserisci il PIN</title>
+    <title>Pagina con PIN</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,62 +14,69 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f4f4f4;
+            background-color: #f2f2f2;
         }
         .container {
             text-align: center;
             padding: 20px;
-            background-color: white;
             border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        input {
+        input[type="password"] {
             padding: 10px;
-            font-size: 18px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
             width: 200px;
             margin: 10px 0;
-            border-radius: 4px;
-            border: 1px solid #ccc;
         }
         button {
             padding: 10px 20px;
             font-size: 16px;
+            cursor: pointer;
             background-color: #4CAF50;
             color: white;
             border: none;
             border-radius: 4px;
-            cursor: pointer;
         }
         button:hover {
             background-color: #45a049;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h2>Inserisci il tuo PIN</h2>
-    <form id="pinForm">
-        <input type="password" id="pin" name="pin" maxlength="4" placeholder="Inserisci PIN" required>
+    <div class="container">
+        <h2>Inserisci il PIN</h2>
+        <input type="password" id="pin" placeholder="Inserisci il PIN">
         <br>
-        <button type="submit">Invia</button>
-    </form>
-    <p id="errorMessage" style="color: red; display: none;">PIN errato. Riprova!</p>
-</div>
+        <button onclick="verificaPIN()">Accedi</button>
+        <p class="error" id="error-message"></p>
+    </div>
 
-<script>
-    document.getElementById('pinForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        
-        var pin = document.getElementById('pin').value;
-        
-        if (pin === '1234') {
-            alert('PIN corretto!');
-        } else {
-            document.getElementById('errorMessage').style.display = 'block';
+    <script>
+        function verificaPIN() {
+            var pinInserito = document.getElementById("pin").value;
+            var errorMessage = document.getElementById("error-message");
+            
+            // PIN corretto
+            var pinCorretto = "1234";
+
+            // Verifica se il PIN inserito è corretto
+            if (pinInserito === pinCorretto) {
+                // Reindirizza se il PIN è corretto
+                window.location.href = "diamantr.html"; // Sostituisci con l'URL di destinazione
+            } else {
+                // Mostra un messaggio di errore
+                errorMessage.textContent = "PIN errato, riprova!";
+            }
         }
-    });
-</script>
+    </script>
 
 </body>
 </html>
