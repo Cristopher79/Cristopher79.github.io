@@ -1,2 +1,75 @@
 <img src="sicurezza.jpg">
+<h1>metti il pin per aprire la cassa forte</h1>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserisci il PIN</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            padding: 10px;
+            font-size: 18px;
+            width: 200px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <h2>Inserisci il tuo PIN</h2>
+    <form id="pinForm">
+        <input type="password" id="pin" name="pin" maxlength="4" placeholder="Inserisci PIN" required>
+        <br>
+        <button type="submit">Invia</button>
+    </form>
+    <p id="errorMessage" style="color: red; display: none;">PIN errato. Riprova!</p>
+</div>
+
+<script>
+    document.getElementById('pinForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        var pin = document.getElementById('pin').value;
+        
+        if (pin === '1234') {
+            alert('PIN corretto!');
+        } else {
+            document.getElementById('errorMessage').style.display = 'block';
+        }
+    });
+</script>
+
+</body>
+</html>
