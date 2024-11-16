@@ -1,1 +1,101 @@
+<img src="sicurezza.jpg">
+<br>
+<h1>metti il pin per aprire la cassa forte</h1>
+<br>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verifica PIN</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        input[type="password"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 80%;
+            text-align: center;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Inserisci il PIN</h1>
+        <input type="password" id="pinInput" placeholder="PIN" maxlength="4">
+        <button onclick="checkPin()">Verifica PIN</button>
+        <div id="message" class="message"></div>
+    </div>
+
+    <!-- Audio di avviso -->
+    <audio id="alertAudio" src="https://www.soundjay.com/button/beep-07.wav"></audio>
+
+    <script>
+        const correctPin = "1234"; // PIN corretto
+        let attempts = 0; // Conta i tentativi errati
+
+        function checkPin() {
+            const pin = document.getElementById("pinInput").value;
+            const messageDiv = document.getElementById("message");
+            const alertAudio = document.getElementById("alertAudio");
+
+            // Controlla se il PIN inserito è corretto
+            if (pin === correctPin) {
+                messageDiv.innerHTML = "PIN corretto! Benvenuto.";
+                messageDiv.style.color = "green";
+                attempts = 0; // Reset dei tentativi
+            } else {
+                attempts++;
+                if (attempts >= 3) {
+                    // Se si sbagliano 3 volte, suona l'audio e mostra il messaggio
+                    messageDiv.innerHTML = "La polizia sta arrivando!";
+                    messageDiv.style.color = "red";
+                    alertAudio.play(); // Suona l'audio
+                    attempts = 0; // Reset dei tentativi dopo 3 errori
+                } else {
+                    messageDiv.innerHTML = `PIN errato. Hai ${3 - attempts} tentativi rimasti.`;
+                    messageDiv.style.color = "red";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
 
