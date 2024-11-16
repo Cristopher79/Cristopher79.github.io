@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verifica PIN</title>
+    <title>Inserisci il PIN</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -91,7 +91,8 @@
                 attempts++;
                 if (attempts >= 3) {
                     // Se si sbagliano 3 volte, suona l'audio e mostra il messaggio
-                    messageDiv.innerHTML = "La polizia sta arrivando!";
+                    messageDiv.innerHTML = "GAME OVER!";
+                     messageDiv.innerHTML = "La polizia sta arrivando!";
                     messageDiv.style.color = "red";
                     alertAudio.play(); // Suona l'audio
                     attempts = 0; // Reset dei tentativi dopo 3 errori
