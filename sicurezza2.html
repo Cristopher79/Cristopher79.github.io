@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inserisci il PIN</title>
+    <title>Verifica PIN</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -23,12 +23,6 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             max-width: 300px;
-
-              var pinCorretto = "1234";
-
-        if (pinInserito === pinCorretto) {
-               
-                window.location.href = "diamante.html"
             margin-left: auto;
             margin-right: auto;
         }
@@ -70,9 +64,8 @@
     </div>
 
     <!-- Audio di avviso -->
-    <audio id="alertAudio" src="https://github.com/Cristopher79/Cristopher79.github.io/raw/main/polizia.mp3"></audio>
+    <audio id="alertAudio" src="https://www.soundjay.com/button/beep-07.wav"></audio>
 
-    
     <script>
         const correctPin = "1234"; // PIN corretto
         let attempts = 0; // Conta i tentativi errati
@@ -84,14 +77,13 @@
 
             // Controlla se il PIN inserito è corretto
             if (pin === correctPin) {
-                messageDiv.innerHTML = "PIN corretto! Benvenuto.";
-                messageDiv.style.color = "green";
-                attempts = 0; // Reset dei tentativi
+                // Se il PIN è corretto, redirige l'utente a un'altra pagina
+                window.location.href = "https://cristopher79.github.io/diamante.html"; // Cambia con il tuo URL
             } else {
                 attempts++;
                 if (attempts >= 3) {
-                    // Se si sbagliano 3 volte, suona l'audio e mostra il messaggio                
-                     messageDiv.innerHTML = "La polizia sta arrivando!";
+                    // Se si sbagliano 3 volte, suona l'audio e mostra il messaggio
+                    messageDiv.innerHTML = "GAME OVER La polizia sta arrivando!";
                     messageDiv.style.color = "red";
                     alertAudio.play(); // Suona l'audio
                     attempts = 0; // Reset dei tentativi dopo 3 errori
@@ -105,4 +97,3 @@
 
 </body>
 </html>
-
