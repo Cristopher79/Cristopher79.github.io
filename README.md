@@ -1,1 +1,1 @@
-<a href="https://cristopher79.github.io/index.html" target="_blank">Il mio README</a>
+<a href="https://cristopher79.github.io/index.html">Il mio README</a>
