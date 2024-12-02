@@ -1,51 +1,57 @@
-<table>
-	<th>
-		<td>
-			Intestazione colonna 1
-		</td>
-	</th>
-	<tr>
-		<td>
-			<p>Riga 1, colonna 1</p>
-		</td>
-		<td>
-			<p id="#ccf2ff">azzurro</p>
-		</td>
-		<td>
-			<p class="testo-verde">Riga 1, colonna 3</p>
-		</td>
-		<td>
-			<p>Riga 1, colonna 4</p>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<p class="testo-verde">Riga 2, colonna 1</p>
-		</td>
-	</tr>
-</table>
-<style>
-	table {
-		border-style: solid;
-		border-width: 1px;
-		border-color: black;
-		/* rimuovi i commenti dal seguente stile per cambiare il comportamento dei bordi della tabella */
-		/* border-collapse: collapse; */
-	}
-	
-	td, th {
-		border-style: dashed;
-		border-width: 1px;
-		border-color: blue;
-	}
-	
-	.testo-verde {
-		/* Usare il sito https://www.w3schools.com/colors/colors_picker.asp per ottenere altri colori */
-		color: #00FF00;
-	}
-	
-	#testo-giallo {
-		/* Usare il sito https://www.w3schools.com/colors/colors_picker.asp per ottenere altri colori */
-		color: yellow;
-	}
-</style>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabella Colori</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: auto;
+            text-align: center;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            font-size: 18px;
+        }
+        .rosso { color: red; }
+        .arancione { color: orange; }
+        .giallo { color: yellow; }
+        .verde { color: green; }
+        .azzurro { color: lightblue; }
+        .blu { color: blue; }
+        .viola { color: purple; }
+        .indaco { color: indigo; }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td class="rosso"><b>Rosso</b></td>
+            <td class="arancione">Arancione</td>
+            <td class="giallo">Giallo</td>
+            <td class="verde">Verde</td>
+        </tr>
+        <tr>
+            <td class="azzurro">Azzurro</td>
+            <td class="blu">Blu</td>
+            <td class="viola">Viola</td>
+            <td class="indaco">Indaco</td>
+        </tr>
+        <tr>
+            <td class="rosso"><b>Rosso</b></td>
+            <td class="arancione">Arancione</td>
+            <td class="giallo">Giallo</td>
+            <td class="verde">Verde</td>
+        </tr>
+        <tr>
+            <td class="azzurro">Azzurro</td>
+            <td class="blu">Blu</td>
+            <td class="viola">Viola</td>
+            <td class="indaco">Indaco</td>
+        </tr>
+    </table>
+</body>
+</html>
